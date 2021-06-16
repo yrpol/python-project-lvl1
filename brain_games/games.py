@@ -27,8 +27,8 @@ def brain_even(name):
             print("Correct!")
             round_count -= 1
         else:
-            print("{} is wrong answer ;(. "
-                  "Correct answer was {}.".format(answer, correct_answer))
+            print("'{}' is wrong answer ;(. "
+                  "Correct answer was '{}'.".format(answer, correct_answer))
             print("Let's try again, {}!".format(name))
             return False
     print("Congratulations, {}!".format(name))
