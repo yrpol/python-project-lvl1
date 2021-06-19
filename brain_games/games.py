@@ -53,29 +53,21 @@ def brain_even(name):
     print("Congratulations, {}!".format(name))
 
 
-def brain_calc(name):
+def brain_calc():
     condition = "What is the result of the expression?"
-    print(condition)
-
-    round_count = 3
-    while round_count > 0:
-        first_number = random.randint(0, 20)
-        second_number = random.randint(0, 20)
+    def play_round():
         operators = ['*', '+', '-']
+        first_number = random.randint(0, 10)
+        second_number = random.randint(0, 10)
         current_operator = operators[random.randint(0, 2)]
 
         expression = "{} {} {}".format(first_number, current_operator, second_number)
+        correct_answer = parser.parse(expression).evaluate({})
+        
         question = "Quesion: {}".format(expression)
         print(question)
-        answer = prompt.string("Your answer: ")
-        correct_answer = parser.parse(expression).evaluate({})
+        player_answer = prompt.string("Your answer: ")
+        
 
-        if int(answer) == int(correct_answer):
-            print("Correct!")
-            round_count -= 1
-        else:
-            print("'{}' is wrong answer ;(. "
-                  "Correct answer was '{}'.".format(answer, correct_answer))
-            print("Let's try again, {}!".format(name))
-            return False
-    print("Congratulations, {}!".format(name))
+        return (correct_answer, player_answer)
+    return condition, play_round
