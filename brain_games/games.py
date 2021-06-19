@@ -10,6 +10,23 @@ def welcome_user():
     print("Hello, {}!".format(name))
     return name
 
+def start_game(name, game):
+    (condition, play_round) = game()
+    print(condition)
+
+    round_count = 3
+    while round_count > 0:
+        (correct_answer, player_answer) = play_round()
+        if int(player_answer) == int(correct_answer):
+            print("Correct!")
+            round_count -= 1
+        else: 
+            print("'{}' is wrong answer ;(. "
+                  "Correct answer was '{}'.".format(player_answer, correct_answer))
+            print("Let's try again, {}!".format(name))
+            return False
+    print("Congratulations, {}!".format(name))
+
 
 def brain_even(name):
     print("Answer 'yes' if the number is even, otherwise answer 'no'.")
