@@ -16,7 +16,12 @@ def start_game(name, game):
 
     round_count = 3
     while round_count > 0:
-        (correct_answer, player_answer) = play_round()
+        (expression, correct_answer) = play_round()
+        
+        question = "Quesion: {}".format(expression)
+        print(question)
+        player_answer = prompt.string("Your answer: ")
+
         if int(player_answer) == int(correct_answer):
             print("Correct!")
             round_count -= 1
@@ -64,10 +69,6 @@ def brain_calc():
         expression = "{} {} {}".format(first_number, current_operator, second_number)
         correct_answer = parser.parse(expression).evaluate({})
         
-        question = "Quesion: {}".format(expression)
-        print(question)
-        player_answer = prompt.string("Your answer: ")
+        return (expression, correct_answer)
         
-
-        return (correct_answer, player_answer)
     return condition, play_round
