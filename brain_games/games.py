@@ -17,12 +17,12 @@ def start_game(name, game):
     round_count = 3
     while round_count > 0:
         (expression, correct_answer) = play_round()
-        
+    
         question = "Quesion: {}".format(expression)
         print(question)
         player_answer = prompt.string("Your answer: ")
 
-        if int(player_answer) == int(correct_answer):
+        if  player_answer == correct_answer:
             print("Correct!")
             round_count -= 1
         else: 
@@ -33,29 +33,16 @@ def start_game(name, game):
     print("Congratulations, {}!".format(name))
 
 
-def brain_even(name):
-    print("Answer 'yes' if the number is even, otherwise answer 'no'.")
-
-    round_count = 3
-    while round_count > 0:
-        current_number = random.randint(0, 20)
-        is_number_even = current_number % 2 == 0
+def brain_even():
+    condition = "Answer 'yes' if the number is even, otherwise answer 'no'."
+    
+    def play_round():
+        expression = random.randint(0, 20)
+        is_number_even = expression % 2 == 0
         correct_answer = 'yes' if is_number_even else 'no'
-
-        print("Question: {}".format(current_number))
-        answer = prompt.string("Your answer: ")
-
-        round_result = correct_answer == answer
-
-        if round_result:
-            print("Correct!")
-            round_count -= 1
-        else:
-            print("'{}' is wrong answer ;(. "
-                  "Correct answer was '{}'.".format(answer, correct_answer))
-            print("Let's try again, {}!".format(name))
-            return False
-    print("Congratulations, {}!".format(name))
+        return (expression, correct_answer)
+    
+    return condition, play_round
 
 
 def brain_calc():
@@ -67,7 +54,7 @@ def brain_calc():
         current_operator = operators[random.randint(0, 2)]
 
         expression = "{} {} {}".format(first_number, current_operator, second_number)
-        correct_answer = parser.parse(expression).evaluate({})
+        correct_answer = str(parser.parse(expression).evaluate({}))
         
         return (expression, correct_answer)
         
