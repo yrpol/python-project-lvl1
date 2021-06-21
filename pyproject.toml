@@ -17,7 +17,7 @@ brain-prime = "brain_games.scripts.brain_prime:main"
 
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 prompt = "^0.4.1"
 py-expression-eval = "^0.3.13"
 
