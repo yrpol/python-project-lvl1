@@ -25,7 +25,8 @@ def start_game(name, game):
             round_count -= 1
         else:
             print("'{}' is wrong answer ;(. "
-                  "Correct answer was '{}'.".format(player_answer, correct_answer))
+                  "Correct answer was '{}'.".format(player_answer,
+                                                    correct_answer))
             print("Let's try again, {}!".format(name))
             return False
     print("Congratulations, {}!".format(name))

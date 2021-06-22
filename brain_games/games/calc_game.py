@@ -12,7 +12,8 @@ def brain_calc():
         second_number = random.randint(0, 10)
         current_operator = operators[random.randint(0, 2)]
 
-        expression = "{} {} {}".format(first_number, current_operator, second_number)
+        expression = "{} {} {}".format(first_number,
+                                       current_operator, second_number)
         correct_answer = str(parser.parse(expression).evaluate({}))
 
         return (expression, correct_answer)
