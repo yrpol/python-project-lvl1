@@ -1,10 +1,9 @@
 import random
 
 
-def brain_progression():
-    condition = "What number is missing in the progression?"
+condition = "What number is missing in the progression?"
 
-    def play_round():
+def play_round():
         progression_length = 10
         step = random.randint(1, 7)
         first_number = random.randint(1, 15)
@@ -27,4 +26,5 @@ def brain_progression():
 
         return (progression, correct_answer)
 
+def brain_progression():
     return condition, play_round
