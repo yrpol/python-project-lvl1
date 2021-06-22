@@ -16,7 +16,7 @@ def start_game(name, game):
     while round_count > 0:
         (expression, correct_answer) = play_round()
 
-        question = "Quesion: {}".format(expression)
+        question = "Question: {}".format(expression)
         print(question)
         player_answer = prompt.string("Your answer: ")
 
