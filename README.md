@@ -5,7 +5,7 @@
 [![Actions Status](https://github.com/yrpol/python-project-lvl1/workflows/flake8-check/badge.svg)](https://github.com/yrpol/python-project-lvl1/actions)
 
 ### Codeclimate status:
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e9d8fedd34db2499516f/maintainability)](https://codeclimate.com/github/yrpol/python-project-lvl1/maintainability)
 
 ### Demonstration:
 
